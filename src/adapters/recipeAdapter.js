@@ -37,12 +37,13 @@ export const getRecipesByCookingTime = (cookingTime) => {
 }
 
 export const getAllIngredients = () => {
-    axios.get("localhost:8080/api/v1/ingredient")
+    return (
+        axios.get("localhost:8080/api/v1/ingredient")
         .then(response => {
-            return response.data;
+            return response.data
         })
-    }
-
+    )
+}
 
 export const getIngredientById = (id) => {
     return (
@@ -53,6 +54,18 @@ export const getIngredientById = (id) => {
     )
 }
 
+export const addIngredient = (ingredient) => {
+return (
+    axios.post('localhost:8080/api/v1/ingredient', ingredient)
+).catch((e)=> {
+    console.log("recipeAdapter could not add ingredient")
+})
+}
 
-
-//List Recipes According to Cooking Time: e.g GET localhost:8080/api/v1/ri?cookingTime=30
+export const addRecipe = (recipe) => {
+    return (
+        axios.post("localhost:8080/api/v1/recipe", recipe)
+    ).catch((e)=> {
+        console.log("recipeAdapter could not add recipe")
+    })
+}
