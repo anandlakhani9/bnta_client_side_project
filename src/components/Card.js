@@ -10,7 +10,7 @@ const Card = (props) => {
         // <div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
         <div className="card">
             {/* <img src={props.image} alt={props.alt}/> */}
-            <h1>{props.name}</h1>
+            <p>{props.name}</p>
             <p>Some description</p>
         </div>
     )
