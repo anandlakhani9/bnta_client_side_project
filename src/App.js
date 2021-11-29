@@ -7,6 +7,7 @@ import { ThemeContext } from "./contexts/ThemeContext";
 
 
 function App() {
+
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
@@ -21,12 +22,13 @@ function App() {
     }
   })
 
+
   return (
     <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
       <header className="App-header">
         <ThemeToggle />
         <HomePage />
-        
+       
       </header>
     </div>
   );

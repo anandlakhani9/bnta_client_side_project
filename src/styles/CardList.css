@@ -1,0 +1,17 @@
+.cardList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: start;
+    gap: 1rem;
+    width:100%;
+    justify-content: center;
+    /* grid-template-areas: */
+    margin-top: 10%;
+        
+  }
+
+.recipeCard.{
+    
+}
