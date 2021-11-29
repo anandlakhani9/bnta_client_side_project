@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import ThemeToggle from './components/ThemeToggle';
 import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
+import NavBar from './components/NavBar';
 
 
 
@@ -26,8 +27,9 @@ function App() {
   return (
     <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
       <header className="App-header">
-        <ThemeToggle />
+        
         <HomePage />
+        <ThemeToggle />
        
       </header>
     </div>

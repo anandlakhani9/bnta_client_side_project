@@ -23,13 +23,13 @@ const ThemeToggle = () => {
     }
 
     return (
-        <>
+        <div>
             <label class="switch">
                 <input type="checkbox" onChange={swapMode} checked={toggled}/>
                 <span class="slider round"></span>
                 <p>Dark mode</p>
             </label>
-        </>
+        </div>
     )
 }
 
