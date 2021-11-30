@@ -5,9 +5,29 @@
     text-align: center;
     border-radius: 6px;
     margin: auto;
+    background-color: rgb(233, 143, 143);
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 #51646b;
+    /* box-shadow: 5px 10px 18px 5px rgba(2, 48, 252, 0.2); */
+    box-shadow: 5px 10px 18px 5px black;
+
   }
+
  
+.card-vegan {
+    background-color: rgb(57, 136, 57);
+}
+
+.card-vegetarian {
+    background-color: rgb(152, 243, 152);
+}
+
+.card-meat {
+    background-color: rgb(255, 64, 64);
+}
+
+.card-pesc{
+    background-color: hotpink;
+}
+

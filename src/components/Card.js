@@ -1,14 +1,52 @@
 import '../styles/Card.css'
-import React, { useContext } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import React, { useState, useEffect, useContext } from "react";
+//import { ThemeContext } from "../contexts/ThemeContext";
 
 const Card = (props) => {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    //const theme = useContext(ThemeContext);
+    //const darkMode = theme.state.darkMode;
+
+    const[theme, setTheme] = useState("");
+    
+    useEffect(() => {
+        if (props.isVegan) {
+            //console.log("vegan")
+            setTheme("card-vegan")
+        }
+        else if (props.isVegetarian){
+            setTheme("card-vegetarian")
+        }
+        else if (props.isPescatarian){
+            setTheme("card-pesc")
+        }
+        else if (props.isMeatOnly){
+            setTheme("card-meat")
+        }
+    }, [props.isVegan, props.isVegetarian, props.isMeatOnly, props.pescatarian])
+    
+    
+    //console.log(theme)
+
+    // const addCardClass = () => {
+    //     console.log("running")
+    //     if (props.isVegan) {
+    //         console.log("vegan")
+    //         return "card-vegan"
+    //     }
+    //     else if (props.isVegetarian){
+    //         return "card-vegetarian"
+    //     }
+    //     else if (props.isMeatOnly){
+    //         return "card-meat"
+    //     }
+    //     else if (props.pescatarian){
+    //         return "card-pesc"
+    //     }
+    // }
 
     return (
-        <div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
-    
+        //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
+        <div className={`card ${theme}`}>
             {/* <img src={props.image} alt={props.alt}/> */}
             <p>{props.name}</p>
             <p>Some description</p>

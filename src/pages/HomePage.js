@@ -3,6 +3,8 @@ import {useState, useEffect} from "react"
 import {getAllRecipes} from "../adapters/recipeAdapter"
 import CardList from "../components/CardList"
 import NavBar from "../components/NavBar"
+import {useNavigate} from "react-router-dom";
+import AddNewButton from "../components/AddNewButton"
 
 const HomePage = () => {
     const [recipes, setRecipes] = useState(null);
@@ -131,6 +133,16 @@ const HomePage = () => {
         }
 
         const recipesToShow = recipesFiltered.length > 0 ? recipesFiltered : filteredRecipes;  
+
+    let navigate = useNavigate();
+
+    const goNewRecipePage = () => {
+        navigate("/NewRecipePage")
+    }
+
+    const goNewIngredientPage = () => {
+        navigate("/NewIngredientPage")
+    }
         
 
     return (
@@ -144,6 +156,7 @@ const HomePage = () => {
             filteredToMedium={filteredToMedium} filteredToMild={filteredToMild} filteredToSweet={filteredToSweet}
             filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}/>
             <CardList recipes={recipesToShow} />
+            <AddNewButton />
         </>
 
         :
@@ -154,6 +167,7 @@ const HomePage = () => {
             filteredToMeatOnly={filteredToMeatOnly} filteredToPescatarian={filteredToPescatarian} filteredToHot={filteredToHot}
             filteredToMedium={filteredToMedium} filteredToMild={filteredToMild} filteredToSweet={filteredToSweet}
             filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}/>
+
         <p>Loading...</p>
         </>
     )

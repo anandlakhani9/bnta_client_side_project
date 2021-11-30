@@ -25,6 +25,8 @@ background-color: #0D0D0D;
 
 .navBar h1:hover{
     color: #a7cedd;
+    transform: scale(1.1);
+    cursor: grab
 }
 
 .navBar button {
