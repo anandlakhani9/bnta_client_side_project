@@ -6,7 +6,16 @@ const CardList = (props) => {
     return (
         <div className="cardList" >
             {recipeList.map(recipe => 
-                <Card name={recipe.name} key={recipe.id} className="recipeCard"/>)}
+                <Card 
+                    name={recipe.name} 
+                    key={recipe.id} 
+                    isVegan={recipe.vegan} 
+                    isVegetarian={recipe.vegetarian}
+                    isMeatOnly={recipe.meatOnly}
+                    isPescatarian={recipe.pescatarian}
+                    className="recipeCard"
+                />
+            )}
         </div>
     )
 

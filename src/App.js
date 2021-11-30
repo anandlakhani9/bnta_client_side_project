@@ -30,8 +30,8 @@ function App() {
         
         <HomePage />
         {/* <ThemeToggle /> */}
-        {/* <button onClick={postIngredients}>post ingredients</button> */}
-        {/* <button onClick={postRecipes}>post recipes</button> */}
+        <button onClick={postIngredients}>post ingredients</button>
+        <button onClick={postRecipes}>post recipes</button>
        
       </header>
     </div>
