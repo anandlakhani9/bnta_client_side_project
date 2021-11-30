@@ -4,9 +4,17 @@
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-top: 50%;
+    font-size: 12px;
+    white-space: nowrap;
   }
   
   /* Hide default HTML checkbox */
+
+  .switch p {
+    margin-top: 40%;
+    margin-left: -10%;
+  }
   .switch input {
     opacity: 0;
     width: 0;
@@ -60,3 +68,62 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+  @media only screen and (max-width: 600px) {
+    .switch {
+    width: 37px;
+    height: 25px;
+    margin-top: 50%;
+    font-size: 10px;
+    white-space: nowrap;
+
+    }
+
+    .slider:before {
+
+    height: 17px;
+    width: 17px;
+    margin-left: -6%;
+    margin-top: 25%;
+
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+  .switch {
+  width: 27px;
+  height: 15px;
+  margin-top: 60%;
+  font-size: 8px;
+  white-space: nowrap;
+
+  }
+
+  .switch p {
+    margin-left: -40%;
+    display: none;
+  }
+
+  .slider:before {
+  height: 12px;
+  width: 12px;
+  margin-left: -6%;
+  margin-top: 50%;
+  margin-bottom: -10%
+
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+}
