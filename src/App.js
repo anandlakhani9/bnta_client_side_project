@@ -25,11 +25,14 @@ function App() {
   });
 
   return (
+
     <BrowserRouter>
       <div className={`App ${darkMode ? "app-dark" : "app-light"}`}>
         <header className="App-header">
           {/* <HomePage />
           <ThemeToggle /> */}
+          <button onClick={postIngredients}>post ingredients</button>
+        <button onClick={postRecipes}>post recipes</button>
         </header>
         <Routes>
           <Route path = "/" element={<HomePage />} />
@@ -38,6 +41,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+
   );
 }
 
