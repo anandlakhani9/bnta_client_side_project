@@ -11,7 +11,7 @@ const getAllRecipes = () => {
 
 const getRecipeById = (id) => {
     return (
-        axios.get("localhost:8080/api/v1/recipe/" + id)
+        axios.get("http://localhost:8080/api/v1/recipe/" + id)
         .then(response => {
             return response.data
         })
@@ -20,7 +20,7 @@ const getRecipeById = (id) => {
 
 const getRecipeAccordingToAllergy = (allergen) => {
     return (
-        axios.get("localhost:8080/api/v1/ri?allergen=" + allergen)
+        axios.get("http://localhost:8080/api/v1/ri?allergen=" + allergen)
         .then(response => {
             return response.data
         })
@@ -29,7 +29,7 @@ const getRecipeAccordingToAllergy = (allergen) => {
 
 const getRecipesByCookingTime = (cookingTime) => {
     return (
-        axios.get("localhost:8080/api/v1/ri?cookingTime=" + cookingTime)
+        axios.get("http://localhost:8080/api/v1/ri?cookingTime=" + cookingTime)
         .then(response => {
             return response.data
         })
@@ -38,7 +38,7 @@ const getRecipesByCookingTime = (cookingTime) => {
 
 const getAllIngredients = () => {
     return (
-        axios.get("localhost:8080/api/v1/ingredient")
+        axios.get("http://localhost:8080/api/v1/ingredient")
         .then(response => {
             return response.data
         })
@@ -47,7 +47,7 @@ const getAllIngredients = () => {
 
 const getIngredientById = (id) => {
     return (
-        axios.get("localhost:8080/api/v1/ingredient/" + id)
+        axios.get("http://localhost:8080/api/v1/ingredient/" + id)
         .then(response => {
             return response.data
         })
