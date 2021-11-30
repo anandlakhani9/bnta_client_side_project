@@ -7,7 +7,7 @@ import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import NavBar from './components/NavBar';
-
+import {postIngredients, postRecipes} from './data/populatedb.js'
 
 
 function App() {
