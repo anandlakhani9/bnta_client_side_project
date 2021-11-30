@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import ThemeToggle from './components/ThemeToggle';
 import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
-import NavBar from './components/NavBar';
+//import NavBar from './components/NavBar';
 
 
 
@@ -29,7 +29,7 @@ function App() {
       <header className="App-header">
         
         <HomePage />
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
        
       </header>
     </div>
