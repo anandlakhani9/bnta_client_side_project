@@ -4,7 +4,7 @@ import ThemeToggle from './components/ThemeToggle';
 import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 //import NavBar from './components/NavBar';
-
+import {postIngredients, postRecipes} from './data/populatedb.js'
 
 
 function App() {
@@ -30,6 +30,8 @@ function App() {
         
         <HomePage />
         {/* <ThemeToggle /> */}
+        {/* <button onClick={postIngredients}>post ingredients</button> */}
+        {/* <button onClick={postRecipes}>post recipes</button> */}
        
       </header>
     </div>

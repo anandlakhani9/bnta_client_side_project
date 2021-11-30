@@ -56,7 +56,7 @@ const getIngredientById = (id) => {
 
 const addIngredient = (ingredient) => {
 return (
-    axios.post('localhost:8080/api/v1/ingredient', ingredient)
+    axios.post('http://localhost:8080/api/v1/ingredient', ingredient)
 ).catch((e)=> {
     console.log("recipeAdapter could not add ingredient")
 })
@@ -64,7 +64,7 @@ return (
 
 const addRecipe = (recipe) => {
     return (
-        axios.post("localhost:8080/api/v1/recipe", recipe)
+        axios.post("http://localhost:8080/api/v1/recipe", recipe)
     ).catch((e)=> {
         console.log("recipeAdapter could not add recipe")
     })
