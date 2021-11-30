@@ -3,6 +3,8 @@ import {useState, useEffect} from "react"
 import {getAllRecipes} from "../adapters/recipeAdapter"
 import CardList from "../components/CardList"
 import NavBar from "../components/NavBar"
+import {useNavigate} from "react-router-dom";
+import AddNewButton from "../components/AddNewButton"
 
 const HomePage = () => {
     const [recipes, setRecipes] = useState(null);
@@ -27,6 +29,16 @@ const HomePage = () => {
         })
         :
         null;
+
+    let navigate = useNavigate();
+
+    const goNewRecipePage = () => {
+        navigate("/NewRecipePage")
+    }
+
+    const goNewIngredientPage = () => {
+        navigate("/NewIngredientPage")
+    }
         
 
     return (
@@ -34,11 +46,13 @@ const HomePage = () => {
         <>
             <NavBar searchChange={searchChange} value={input} />
             <CardList recipes={filteredRecipes} />
+            <AddNewButton />
         </>
 
         :
         <>
         <NavBar searchChange={searchChange} value={input}/>
+        
         <p>Loading...</p>
         </>
     )
