@@ -22,6 +22,11 @@ background-color: #2C2A2A;
     margin: 1%;
 }
 
+.navBar h1:hover{
+    transform: scale(1.1);
+    cursor: grab
+}
+
 .navBar button {
     font-size: 1vw;
     text-transform: uppercase;
