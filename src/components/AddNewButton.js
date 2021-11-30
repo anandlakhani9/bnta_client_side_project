@@ -17,6 +17,10 @@ const AddNewButton = (props) => {
         navigate("/NewRecipePage")
     }
 
+    const goNewIngredientPage = () => {
+        navigate("/NewIngredientPage")
+    }
+
     return(
         AddNewButtonState === "closed" ?
         <>
@@ -24,9 +28,9 @@ const AddNewButton = (props) => {
         </>
         :
             <>
-            <button onClick={handleClick}>+</button>
+            <button onClick={handleClick}>-</button>
             <button onClick = {goNewRecipePage}>Add New Recipe</button>
-            <button>Add New Ingredient</button>
+            <button onClick = {goNewIngredientPage}>Add New Ingredient</button>
             </>
     )
 }

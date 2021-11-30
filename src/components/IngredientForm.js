@@ -1,16 +1,36 @@
+import {useState} from "react"
+import {addIngredient} from "../adapters/recipeAdapter"
 
-const ingredientForm = () => {
+const IngredientForm = () => {
+
+    const [ingredientName, setIngredientName] = useState(null)
+    const [allergen, setAllergen] = useState(null);
 
     const handleFormSubmission = (event) => {
-        event.preventDefault
+        event.preventDefault();
+        const newIngredient = {
+            ingredientName: ingredientName,
+            allergen: allergen
+        };   
+
+        addIngredient(newIngredient);
     }
+
+    const handleNameChange = (event) => {
+        setIngredientName(event.target.value);
+    };
+
+    const handleAllergenChange = (event) => {
+        setAllergen(event.target.value);
+    };
     
     return(
         <form onSubmit={handleFormSubmission}>
             <p>Add new ingredient</p>
-            <input type="text"></input>
+            <input type="text" value={ingredientName} onChange={handleNameChange}></input>
             <p> Allergen</p>
-            <input type="text"></input>
+            <input type="text" value={allergen} onChange={handleAllergenChange}></input>
+            <input type="submit" value="Add Ingredient"/>
             
         </form>
 
@@ -18,4 +38,4 @@ const ingredientForm = () => {
     
 }
 
-export default ingredientForm;
+export default IngredientForm;

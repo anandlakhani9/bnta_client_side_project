@@ -35,6 +35,10 @@ const HomePage = () => {
     const goNewRecipePage = () => {
         navigate("/NewRecipePage")
     }
+
+    const goNewIngredientPage = () => {
+        navigate("/NewIngredientPage")
+    }
         
 
     return (

@@ -1,6 +1,7 @@
 import './App.css';
 import HomePage from './pages/HomePage';
 import NewRecipePage from './pages/NewRecipePage';
+import NewIngredientPage from './pages/NewIngredientPage';
 import ThemeToggle from './components/ThemeToggle';
 import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path = "/" element={<HomePage />} />
           <Route path = "/NewRecipePage" element = {<NewRecipePage />} />
+          <Route path = "/NewIngredientPage" element = {<NewIngredientPage />} />
         </Routes>
       </div>
     </BrowserRouter>
