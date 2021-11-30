@@ -1,4 +1,5 @@
 import '../styles/NavBar.css'
+import ThemeToggle from './ThemeToggle';
 
 
 const NavBar = ({searchChange}) => {
@@ -8,6 +9,7 @@ const NavBar = ({searchChange}) => {
             <h1>Day Owls</h1>
             <input className="searchBar" type="search" placeholder="search..."  onChange = {searchChange}/>
             <button>Allergens</button>
+            <ThemeToggle />
         </div>
     )
 }

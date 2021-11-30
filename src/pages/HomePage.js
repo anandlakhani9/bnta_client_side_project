@@ -37,8 +37,10 @@ const HomePage = () => {
         </>
 
         :
-        
+        <>
+        <NavBar searchChange={searchChange} value={input}/>
         <p>Loading...</p>
+        </>
     )
 }
 export default HomePage;
