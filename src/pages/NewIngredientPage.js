@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import IngredientForm from "../components/IngredientForm";
+import "../styles/Form.css"
 
 const NewIngredientPage = () => {
     return(
         <>
-        <p>This is the New Ingredients Page</p>
+        <h1 className="header">Add a new Ingredient</h1>
         <IngredientForm />
         </>
     )
