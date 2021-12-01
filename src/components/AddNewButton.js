@@ -25,16 +25,16 @@ const AddNewButton = (props) => {
     return(
         
         AddNewButtonState === "closed" ?
-        <div className="addButton">
-            <button onClick={handleClick} className="addNew">+</button>
+        <div className="addButtonDiv">
+            <button onClick={handleClick} className="plusButton">+</button>
             </div>
         :
-        <div className="addButton">
+        <div className="addButtonDiv">
             
-            
-            <button onClick = {goNewRecipePage} className="add addRecipe">Add New Recipe</button>
-            <button onClick = {goNewIngredientPage} className="add addIngredient">Add New Ingredient</button>
-            <button onClick={handleClick} className="addNew">-</button>
+            <button onClick = {goNewRecipePage} className="addRecipe">Add New Recipe</button>
+            <button onClick = {goNewIngredientPage} className="addIngredient">Add New Ingredient</button>
+        
+            <button onClick={handleClick} className="plusButton">-</button>
 
             </div>
 
