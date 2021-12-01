@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addRecipe } from "../adapters/recipeAdapter";
+import "../styles/Form.css"
 
 const RecipeForm = () => {
   const [name, setName] = useState(null);
@@ -71,60 +72,74 @@ const RecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmission}>
-      <p>Recipe name</p>
-      <input type="text" value={name} onChange={handleNameChange}></input>
-      <p>Cuisine</p>
-      <input type="text" value={cuisine} onChange={handleCuisineChange}></input>
-      <p>Vegetarian</p>
-      <input
-        type="checkbox"
-        value={vegetarian}
-        onChange={handleVegetarianChange}
-      ></input>
-      <p>Vegan</p>
-      <input type="checkbox" value={vegan} onChange={handleVeganChange}></input>
-      <p>Contains Meat</p>
-      <input
-        type="checkbox"
-        value={meatOnly}
-        onChange={handleMeatOnlyChange}
-      ></input>
-      <p>Pescatarian</p>
-      <input
-        type="checkbox"
-        value={pescatarian}
-        onChange={handlePescatarianChange}
-      ></input>
-      <p>Meal Type</p>
-      <select value={mealType} onChange={handleMealTypeChange}>
-        <option value="BREAKFAST">BREAKFAST</option>
-        <option value="LUNCH">LUNCH</option>
-        <option value="DINNER">DINNER</option>
-        <option value="SNACK">SNACK</option>
-        <option value="DESSERT">DESSERT</option>
-      </select>
-      <p>Spice Rating</p>
-      <select value={spiceRating} onChange={handleSpiceRatingChange}>
-        <option value="SWEET">SWEET</option>
-        <option value="MILD">MILD</option>
-        <option value="MEDIUM">MEDIUM</option>
-        <option value="HOT">HOT</option>
-      </select>
-      <p>Cooking Time</p>
-      <input
-        type="text"
-        value={cookingTime}
-        onChange={handleCookingTimeChange}
-      ></input>
-      <p>Instructions</p>
-      <input
-        type="text"
-        value={instructions}
-        onChange={handleInstructionsChange}
-      ></input>
-      <input type="submit"/>
-    </form>
+    <div className="formContainer">
+      <div className = "form">
+      <form onSubmit={handleFormSubmission}>
+        <p className="inputTitle">Recipe name</p>
+        <input type="text" value={name} onChange={handleNameChange}></input>
+        <p className="inputTitle">Cuisine</p>
+        <input type="text" value={cuisine} onChange={handleCuisineChange}></input>
+        <div className="checkboxContainer">
+        <p className="inputTitle">Vegetarian</p>
+        <input
+          type="checkbox" 
+          value={vegetarian}
+          onChange={handleVegetarianChange}
+        ></input>
+        </div>
+        <div className="checkboxContainer">
+        <p className="inputTitle">Vegan</p>
+        <input type="checkbox" value={vegan} onChange={handleVeganChange}></input>
+        </div>
+        <div className="checkboxContainer">
+        <p className="inputTitle">Contains Meat</p>
+        <input
+          type="checkbox"
+          value={meatOnly}
+          onChange={handleMeatOnlyChange}
+        ></input>
+        </div>
+        <div className="checkboxContainer">
+        <p className="inputTitle">Pescatarian</p>
+        <input
+          type="checkbox"
+          value={pescatarian}
+          onChange={handlePescatarianChange}
+        ></input>
+        </div>
+        <p className="inputTitle">Meal Type</p>
+        <select className="select decorated" value={mealType} onChange={handleMealTypeChange}>
+          <option className="option" value="BREAKFAST">BREAKFAST</option>
+          <option className="option" value="LUNCH">LUNCH</option>
+          <option className="option" value="DINNER">DINNER</option>
+          <option className="option" value="SNACK">SNACK</option>
+          <option className="option" value="DESSERT">DESSERT</option>
+        </select>
+        <p className="inputTitle">Spice Rating</p>
+        <select className="select" value={spiceRating} onChange={handleSpiceRatingChange}>
+          <option value="SWEET">SWEET</option>
+          <option value="MILD">MILD</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="HOT">HOT</option>
+        </select>
+        <p className="inputTitle">Cooking Time</p>
+        <input
+          type="text"
+          value={cookingTime}
+          onChange={handleCookingTimeChange}
+        ></input>
+        <p className="inputTitle">Instructions</p>
+        <input
+          type="text"
+          className="instructions"
+          value={instructions}
+          onChange={handleInstructionsChange}
+        ></input>
+        <hr/>
+        <input className="submit" type="submit"/>
+      </form>
+      </div>
+    </div>
   );
 };
 
