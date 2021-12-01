@@ -1,4 +1,7 @@
 /* The switch - the box around the slider */
+.switch::before{
+  border: none;
+}
 .switch {
     position: relative;
     display: inline-block;
@@ -7,6 +10,7 @@
     margin-top: 50%;
     font-size: 12px;
     white-space: nowrap;
+    border: none;
   }
   
   /* Hide default HTML checkbox */
@@ -15,7 +19,7 @@
     margin-top: 40%;
     margin-left: -10%;
   }
-  .switch input {
+  .switch .dark-mode-check {
     opacity: 0;
     width: 0;
     height: 0;
