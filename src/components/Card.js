@@ -1,6 +1,7 @@
 import '../styles/Card.css'
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { useNavigate } from 'react-router';
 
 const Card = (props) => {
     const dark = useContext(ThemeContext);
@@ -44,13 +45,21 @@ const Card = (props) => {
     //     }
     // }
 
+    let navigate = useNavigate();
+    const goToRecipe = () => {
+        navigate("/recipes/" + props.id)
+    }
+
     return (
         //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
-        <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`}>
+
+        <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`}
+        onClick={goToRecipe}>
             {/* <img src={props.image} alt={props.alt}/> */}
             <p>{props.name}</p>
             <p>Some description</p>
         </div>
+
     )
 }
 
