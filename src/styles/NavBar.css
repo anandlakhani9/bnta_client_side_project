@@ -2,7 +2,7 @@
 
 .navBar {
 font-family: 'Asap', sans-serif;
-color: white;
+/* color: white; */
 text-transform: uppercase;
 position: absolute;
 width: 100%;
@@ -11,9 +11,16 @@ top: 0;
 display: flex;
 flex-flow: row wrap;
 justify-content: space-around;
-background-color: #0D0D0D;
+/* background-color: #0D0D0D; */
+}
 
-
+.navbar-dark{
+    color: white;
+    background-color: #0D0D0D;
+}
+.navbar-light{
+    color: black;
+    background-color: white;
 }
 
 .navBar h1 {
@@ -34,10 +41,23 @@ background-color: #0D0D0D;
     text-transform: uppercase;
     margin-top: 2%;
     margin-bottom: 2%;
-    background: #0D0D0D;
+    /* background: #0D0D0D; */
     border: none;
     outline: none;
-    color: white;
+    border-radius: 6px;
+    /* color: white; */
+}
+
+.navbar-dark button {
+    background: #222222;
+    color: white; 
+    box-shadow: 0px 0px 1px 1px rgb(92, 92, 92);
+}
+.navbar-light button {
+    background: white;
+    color: black;
+    box-shadow: 0px 0px 1px 1px rgb(92, 92, 92); 
+    
 }
 
 .navBar button:hover {
@@ -52,25 +72,39 @@ background-color: #0D0D0D;
     height: 2.5vw;
     font-size: 16px;
     margin: 2%;
-    background: #D2CFCF;
+    /* background: #D2CFCF; */
     box-shadow: 0px 4px 4px rgba(129, 129, 129, 0.25), inset 0px 4px 4px rgba(129, 129, 129, 0.25);
     border-radius: 32px;
     border: none;
     outline: none;
-    color: white;
-
+    /* color: white; */
 }
 
+.searchBar-light{
+    background: #D2CFCF;
+    color: white;
+}
+
+.searchBar-dark{
+    background: #222222;
+    color: white;
+    box-shadow: 0px 0px 1px 1px rgb(92, 92, 92);
+}
 
 .searchBar:hover {
     color: #4D4B4B;
     background: white;
     transition: 0.2s;
 }
+.searchBar-dark:hover {
+    color: white;
+    background: rgb(63, 63, 63);
+    transition: 0.2s;
+}
 
 .menuLinks {
-    background-color: #0D0D0D;
-    color: white;
+    /* background-color: #0D0D0D; */
+    /* color: white; */
     margin-top: 5%;
     margin-left: 70%;
     margin-right: 20%;
@@ -82,6 +116,15 @@ background-color: #0D0D0D;
     z-index: 1;
     white-space: nowrap;
 
+}
+
+.menuLinks-dark{
+    background-color: #0D0D0D; 
+    color: white;
+}
+.menuLinks-light{
+    background-color: white; 
+    color: black;
 }
 
 .mealTypeMenu, .dietsMenu, .spiceRatingMenu, .cookingTimeMenu {

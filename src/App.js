@@ -31,14 +31,15 @@ function App() {
         <header className="App-header">
           {/* <HomePage />
           <ThemeToggle /> */}
-          <button onClick={postIngredients}>post ingredients</button>
-        <button onClick={postRecipes}>post recipes</button>
+         
         </header>
         <Routes>
           <Route path = "/" element={<HomePage />} />
           <Route path = "/NewRecipePage" element = {<NewRecipePage />} />
           <Route path = "/NewIngredientPage" element = {<NewIngredientPage />} />
         </Routes>
+        <button onClick={postIngredients}>post ingredients</button>
+        <button onClick={postRecipes}>post recipes</button>
       </div>
     </BrowserRouter>
 
