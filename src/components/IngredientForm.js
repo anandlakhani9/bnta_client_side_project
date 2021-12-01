@@ -1,5 +1,6 @@
 import {useState} from "react"
 import {addIngredient} from "../adapters/recipeAdapter"
+import "../styles/Form.css"
 
 const IngredientForm = () => {
 
@@ -25,14 +26,19 @@ const IngredientForm = () => {
     };
     
     return(
+        <div className="formContainer">
+        <div className = "form">
         <form onSubmit={handleFormSubmission}>
-            <p>Add new ingredient</p>
+            <p className="inputTitle">Add new ingredient</p>
             <input type="text" value={ingredientName} onChange={handleNameChange}></input>
-            <p> Allergen</p>
+            <p className="inputTitle"> Allergen</p>
             <input type="text" value={allergen} onChange={handleAllergenChange}></input>
-            <input type="submit" value="Add Ingredient"/>
+            <hr/>
+            <input className="submit" type="submit" value="Submit"/>
             
         </form>
+        </div>
+        </div>
 
     )
     

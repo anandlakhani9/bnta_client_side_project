@@ -7,8 +7,10 @@ import React, { useEffect, useContext } from "react";
 import { ThemeContext } from "./contexts/ThemeContext";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import NavBar from './components/NavBar';
+
 import {postIngredients, postRecipes} from './data/populatedb.js'
 import RecipePage from './pages/RecipePage';
+
 
 
 function App() {
@@ -32,16 +34,19 @@ function App() {
         <header className="App-header">
           {/* <HomePage />
           <ThemeToggle /> */}
-         
+
         </header>
+        
         <Routes>
           <Route path = "/" element={<HomePage />} />
           <Route path = "/NewRecipePage" element = {<NewRecipePage />} />
           <Route path = "/NewIngredientPage" element = {<NewIngredientPage />} />
           <Route path="/recipe/:id" element={<RecipePage />} />
         </Routes>
+
         <button onClick={postIngredients}>post ingredients</button>
         <button onClick={postRecipes}>post recipes</button>
+
       </div>
     </BrowserRouter>
 
