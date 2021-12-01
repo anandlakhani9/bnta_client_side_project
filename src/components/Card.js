@@ -1,10 +1,12 @@
 import '../styles/Card.css'
 import React, { useState, useEffect, useContext } from "react";
-//import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
-    //const theme = useContext(ThemeContext);
-    //const darkMode = theme.state.darkMode;
+    const dark = useContext(ThemeContext);
+    const darkMode = dark.state.darkMode;
 
     const[theme, setTheme] = useState("");
     
@@ -22,7 +24,7 @@ const Card = (props) => {
         else if (props.isMeatOnly){
             setTheme("card-meat")
         }
-    }, [props.isVegan, props.isVegetarian, props.isMeatOnly, props.pescatarian])
+    }, [props.isVegan, props.isVegetarian, props.isMeatOnly, props.isPescatarian])
     
     
     //console.log(theme)
@@ -44,13 +46,23 @@ const Card = (props) => {
     //     }
     // }
 
+    let navigate = useNavigate();
+    const goToRecipe = () => {
+        //navigate("/recipes/" + props.id)
+        //navigate("/recipes/:id")
+    }
+
     return (
         //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
-        <div className={`card ${theme}`}>
+        <Link to={{pathname: `/recipe/${props.id}`}}>
+        <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`} >
+        {/* onClick={goToRecipe}> */}
             {/* <img src={props.image} alt={props.alt}/> */}
             <p>{props.name}</p>
             <p>Some description</p>
         </div>
+        </Link>
+
     )
 }
 

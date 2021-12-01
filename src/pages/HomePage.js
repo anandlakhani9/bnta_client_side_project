@@ -149,7 +149,6 @@ const HomePage = () => {
     return (
         recipes ?
         <>
-
             <NavBar goHome={goHome} searchChange={searchChange} value={input} filteredToBreakFast={filteredToBreakFast} 
             filteredToLunch={filteredToLunch} filteredToDinner={filteredToDinner} filteredToSnack={filteredToSnack} 
             filteredToDessert={filteredToDessert} filteredToVegetarian={filteredToVegetarian} filteredToVegan={filteredToVegan} 

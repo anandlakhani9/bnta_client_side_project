@@ -8,7 +8,8 @@ const CardList = (props) => {
             {recipeList.map(recipe => 
                 <Card 
                     name={recipe.name} 
-                    key={recipe.id} 
+                    key={recipe.id}
+                    id={recipe.id} 
                     isVegan={recipe.vegan} 
                     isVegetarian={recipe.vegetarian}
                     isMeatOnly={recipe.meatOnly}
