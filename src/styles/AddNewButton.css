@@ -1,0 +1,57 @@
+
+.addButton{
+    display: flex;
+    flex-direction:column;
+    position:fixed;
+    bottom: 10rem;
+    right: 100px;
+    z-index: 5; 
+    justify-content: space-between;
+}
+
+.addNew{
+    position: fixed;
+    font-family: 'Bebas Neue', cursive;
+    background-color: #4CAF50; 
+    width:55px;
+	height:55px;
+	/* bottom:15px;
+	right:15px; */
+    border: none;
+    color: white;
+     margin: 5%;
+    text-align: center;
+    font-size: 80px;
+    border-radius:50%;
+    box-shadow: 2px 2px 2px black;
+  }
+
+
+.addNew:hover{
+    box-shadow: 4px 4px 4px black;
+    transform: scale(1.1);
+}
+
+.add {
+    background-color: #4CAF50;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10%;
+    border-style:none;
+
+}
+.add:hover{
+    box-shadow: 4px 4px 4px black;
+    transform: scale(1.1);
+}
+
+.addRecipe{
+
+}
+
+.addIngredient{
+
+
+}  

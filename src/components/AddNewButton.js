@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import "../styles/AddNewButton.css"
 
 const AddNewButton = (props) => {
 
@@ -22,16 +23,22 @@ const AddNewButton = (props) => {
     }
 
     return(
+        
         AddNewButtonState === "closed" ?
-        <>
-            <button onClick={handleClick}>+</button>
-        </>
+        <div className="addButton">
+            <button onClick={handleClick} className="addNew">+</button>
+            </div>
         :
-            <>
-            <button onClick={handleClick}>-</button>
-            <button onClick = {goNewRecipePage}>Add New Recipe</button>
-            <button onClick = {goNewIngredientPage}>Add New Ingredient</button>
-            </>
+        <div className="addButton">
+            
+            
+            <button onClick = {goNewRecipePage} className="add addRecipe">Add New Recipe</button>
+            <button onClick = {goNewIngredientPage} className="add addIngredient">Add New Ingredient</button>
+            <button onClick={handleClick} className="addNew">-</button>
+
+            </div>
+
+      
     )
 }
 
