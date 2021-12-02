@@ -57,7 +57,7 @@ background-color: #0D0D0D;
     border-radius: 32px;
     border: none;
     outline: none;
-    color: white;
+    color: #4D4B4B;
 
 }
 
@@ -72,7 +72,7 @@ background-color: #0D0D0D;
     background-color: #0D0D0D;
     color: white;
     margin-top: 5%;
-    margin-left: 70%;
+    margin-left: 57%;
     margin-right: 20%;
     position: absolute;
     display: flex;

@@ -1,30 +1,31 @@
 import '../styles/Card.css'
 import React, { useState, useEffect, useContext } from "react";
+import { AiFillStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 //import { ThemeContext } from "../contexts/ThemeContext";
 
-const Card = (props) => {
+const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToFaves, removeFromFaves, favourites}) => {
     //const theme = useContext(ThemeContext);
     //const darkMode = theme.state.darkMode;
 
     const[theme, setTheme] = useState("");
     
     useEffect(() => {
-        if (props.isVegan) {
+        if(isVegan) {
             //console.log("vegan")
             setTheme("card-vegan")
         }
-        else if (props.isVegetarian){
+        else if (isVegetarian){
             setTheme("card-vegetarian")
         }
-        else if (props.isPescatarian){
+        else if (isPescatarian){
             setTheme("card-pesc")
         }
-        else if (props.isMeatOnly){
+        else if (isMeatOnly){
             setTheme("card-meat")
         }
-    }, [props.isVegan, props.isVegetarian, props.isMeatOnly, props.pescatarian])
-    
-    
+    }, [isVegan, isVegetarian, isMeatOnly, isPescatarian]);
+
     //console.log(theme)
 
     // const addCardClass = () => {
@@ -43,12 +44,20 @@ const Card = (props) => {
     //         return "card-pesc"
     //     }
     // }
+        
 
+    
+    
     return (
         //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
         <div className={`card ${theme}`}>
+
+            {favourites == true ?
+            (<button onClick={() => removeFromFaves(id)}><AiFillStar /></button>)
+            :(<button onClick={() => addToFaves(id)}><AiOutlineStar /></button>)}
+
             {/* <img src={props.image} alt={props.alt}/> */}
-            <p>{props.name}</p>
+            <p>{name}</p>
             <p>Some description</p>
         </div>
     )
