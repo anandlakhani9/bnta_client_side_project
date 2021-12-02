@@ -15,54 +15,54 @@ const RecipePage = (props) => {
     const [recipe, setRecipe] = useState(null)
     const [showUpdateForm, setShowUpdateForm] = useState(false)
 
-    useEffect(()=> {
+    useEffect(() => {
         getRecipeById(id).then(r => setRecipe(r))
 
-    },[])
+    }, [])
 
     let navigate = useNavigate();
     const goHome = () => {
         navigate("/");
     }
-       
 
-    const updateForm = () =>
-    {
+
+    const updateForm = () => {
         setShowUpdateForm(true);
-        }
+    }
 
-    return(
+    return (
         recipe ?
-       <div>
-        <FormPageNavBar goHome={goHome}/>
-        <>
 
-        <div className="recipe-page">
-        
-        <h1>{recipe.name}</h1>
-        <h3>{`Cuisine: ${recipe.cuisine}`}</h3>
-        <h3>{`Spice Level: ${recipe.spiceRating}`}</h3>
-        <h3>{`Cooking Time: ${recipe.cookingTime} minutes`}</h3>
-        <h3>{`Meal Type: ${recipe.mealType}`}</h3>
-        <div className="cooking-instructions">
-            <h2>Instructions</h2>
-            <p><span className="recipe-instructions">{recipe.instructions}</span></p>
-        </div>
-        
-        <button onClick={updateForm}>Update Recipe</button>
-        </div>
-        </div>
 
-        {showUpdateForm ?
-        <>
-        <UpdateRecipeForm recipe={recipe}/>
-        </>
-        :
-        <>
-        </>}
-        </>
-        :
-        <p>Loading...</p>
+            <>
+
+                <FormPageNavBar goHome={goHome} />
+                <div className="recipe-page">
+
+                    <h1>{recipe.name}</h1>
+                    <h3>{`Cuisine: ${recipe.cuisine}`}</h3>
+                    <h3>{`Spice Level: ${recipe.spiceRating}`}</h3>
+                    <h3>{`Cooking Time: ${recipe.cookingTime} minutes`}</h3>
+                    <h3>{`Meal Type: ${recipe.mealType}`}</h3>
+                    <div className="cooking-instructions">
+                        <h2>Instructions</h2>
+                        <p><span className="recipe-instructions">{recipe.instructions}</span></p>
+                    </div>
+
+                    <button onClick={updateForm}>Update Recipe</button>
+                </div>
+
+
+                {showUpdateForm ?
+                    <>
+                        <UpdateRecipeForm recipe={recipe} />
+                    </>
+                    :
+                    <>
+                    </>}
+            </>
+            :
+            <p>Loading...</p>
     )
 }
 
