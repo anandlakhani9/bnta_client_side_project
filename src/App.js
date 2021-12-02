@@ -44,8 +44,8 @@ function App() {
           <Route path="/recipe/:id" element={<RecipePage />} />
         </Routes>
 
-        <button onClick={postIngredients}>post ingredients</button>
-        <button onClick={postRecipes}>post recipes</button>
+        {/* <button onClick={postIngredients}>post ingredients</button> */}
+        {/* <button onClick={postRecipes}>post recipes</button> */}
 
       </div>
     </BrowserRouter>

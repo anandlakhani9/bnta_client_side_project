@@ -15,6 +15,7 @@ const CardList = (props) => {
                     isMeatOnly={recipe.meatOnly}
                     isPescatarian={recipe.pescatarian}
                     className="recipeCard"
+                    theRecipe={recipe}
                 />
             )}
         </div>

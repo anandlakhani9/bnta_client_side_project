@@ -4,11 +4,15 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
+
 const Card = (props) => {
     const dark = useContext(ThemeContext);
     const darkMode = dark.state.darkMode;
 
     const[theme, setTheme] = useState("");
+
+
+    
     
     useEffect(() => {
         if (props.isVegan) {
@@ -47,15 +51,18 @@ const Card = (props) => {
     // }
 
     let navigate = useNavigate();
-    const goToRecipe = () => {
-        //navigate("/recipes/" + props.id)
-        //navigate("/recipes/:id")
-    }
+    // const goToRecipe = () => {
+    //     //navigate("/recipes/" + props.id)
+    //     //navigate("/recipes/:id")
+    // }
 
     return (
         //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
-        <Link to={{pathname: `/recipe/${props.id}`}}>
-        <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`} >
+        <Link to={{
+            pathname: `/recipe/${props.id}`,
+            state: {recipe: props.theRecipe}
+        }}>
+        <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`}>
         {/* onClick={goToRecipe}> */}
             {/* <img src={props.image} alt={props.alt}/> */}
             <p>{props.name}</p>

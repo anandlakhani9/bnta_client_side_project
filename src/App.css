@@ -36,6 +36,24 @@
     transform: rotate(360deg);
   }
 } */
+.recipe-instructions{
+  white-space: pre-line;
+}
+
+
+.recipe-page{
+  text-align: center;
+  margin-left: 2em;
+  margin-right: 2em;
+  border-radius: 6px;
+  background-color: rgb(85, 85, 85);
+  margin: 2em;
+  padding: 2em;
+}
+.cooking-instructions{
+  text-align: left;
+  line-height: 1.5em
+}
 
 .ingredientPageTitle{
   margin-top: 3em;
