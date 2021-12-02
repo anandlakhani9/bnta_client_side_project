@@ -36,6 +36,19 @@
     transform: rotate(360deg);
   }
 } */
+.homepage-title{
+  margin-top:5em;
+  text-align:center;
+}
+
+.homepage-title-dark{
+color: white;
+}
+
+.homepage-title-light{
+color:rgb(56, 56, 56);
+}
+
 .recipe-instructions{
   white-space: pre-line;
 }
