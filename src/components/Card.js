@@ -11,7 +11,7 @@ const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToF
     const darkMode = darkTheme.state.darkMode;
 
     const[theme, setTheme] = useState("");
-  
+
     useEffect(() => {
         if(isVegan) {
             //console.log("vegan")
