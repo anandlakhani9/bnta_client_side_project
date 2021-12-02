@@ -10,9 +10,6 @@ const Card = (props) => {
     const darkMode = dark.state.darkMode;
 
     const[theme, setTheme] = useState("");
-
-
-    
     
     useEffect(() => {
         if (props.isVegan) {

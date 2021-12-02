@@ -70,5 +70,12 @@ const addRecipe = (recipe) => {
     })
 }
 
+const updateRecipe = (recipe, id) => {
+    return (
+        axios.put("http://localhost:8080/api/v1/recipe/" + id, recipe)
+    ).catch((e)=> {
+        console.log("recipeAdapter could not update recipe")
+    })
+}
 
-export { getAllRecipes, getRecipeById, getRecipeAccordingToAllergy, getRecipesByCookingTime, getAllIngredients, getIngredientById, addIngredient, addRecipe}
+export { getAllRecipes, getRecipeById, getRecipeAccordingToAllergy, getRecipesByCookingTime, getAllIngredients, getIngredientById, addIngredient, addRecipe, updateRecipe}
