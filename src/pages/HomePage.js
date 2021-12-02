@@ -13,10 +13,7 @@ const HomePage = () => {
     const [recipesFiltered, setRecipesFiltered] = useState([]);
 
     useEffect(()=>{
-        getAllRecipes().then(response => setRecipes(response.filter((recipes)=>{
-            return recipes.name.toLowerCase().includes(input.toLowerCase())
-        })))
-    }, [])
+        getAllRecipes().then(response => setRecipes(response))}, [])
 
     const searchChange = (s) => {
         console.log(s.target.value)
@@ -24,10 +21,15 @@ const HomePage = () => {
         setRecipesFiltered("");
     };
 
+    const sortRecipes = 
+    recipes ?
+    recipes.sort((x, y) => {return (x.favourites === y.favourite)? 0 : x? -1 : 1;})
+    :
+    null;
 
     const filteredRecipes = 
     recipes ?
-        recipes.filter((recipes)=> {
+        sortRecipes.filter((recipes)=> {
             return recipes.name.toLowerCase().includes(input.toLowerCase());
         })
         :
@@ -37,6 +39,7 @@ const HomePage = () => {
    
             const newRecipes = recipes.filter((recipes)=> { return recipes.mealType.toLowerCase().includes("breakfast") })
             setRecipesFiltered(newRecipes);
+            console.log(recipesFiltered.id);
         }
     
         const filteredToLunch = () => { 
@@ -144,7 +147,26 @@ const HomePage = () => {
     const goNewIngredientPage = () => {
         navigate("/NewIngredientPage")
     }
-        
+    
+    const addToFaves = (id) => {
+        const findRecipe = recipes.find(recipes => recipes.id === id);
+        findRecipe.favourites = true;
+        const updateRecipes = [...recipes];
+        setRecipes(updateRecipes);
+    };
+
+    const removeFromFaves = (id) => {
+        const findRecipe = recipes.find(recipes => recipes.id === id);
+        findRecipe.favourites = false;
+        const updateRecipes = [...recipes];
+        setRecipes(updateRecipes);
+    };
+
+    const filteredToFaves= () => {   
+        const newRecipes = recipes.filter((recipes)=> { return recipes.favourites })
+        setRecipesFiltered(newRecipes);
+    }
+
 
     return (
         recipes ?
@@ -154,9 +176,10 @@ const HomePage = () => {
             filteredToDessert={filteredToDessert} filteredToVegetarian={filteredToVegetarian} filteredToVegan={filteredToVegan} 
             filteredToMeatOnly={filteredToMeatOnly} filteredToPescatarian={filteredToPescatarian} filteredToHot={filteredToHot}
             filteredToMedium={filteredToMedium} filteredToMild={filteredToMild} filteredToSweet={filteredToSweet}
-            filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}/>
+            filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}
+            filteredToFaves={filteredToFaves} />
+            <CardList recipes={recipesToShow} addToFaves={addToFaves} removeFromFaves={removeFromFaves}/>
             <PopulateDBbutton/>
-            <CardList recipes={recipesToShow} />
             <AddNewButton />
         </>
 
