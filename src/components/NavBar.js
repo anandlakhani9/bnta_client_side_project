@@ -7,7 +7,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 const NavBar = ({ goHome, searchChange, filteredToBreakFast, filteredToLunch, filteredToDinner, filteredToSnack,
     filteredToDessert, filteredToVegetarian, filteredToVegan, filteredToMeatOnly, filteredToPescatarian,
     filteredToHot, filteredToMedium, filteredToMild, filteredToSweet, filteredTo30mins, filteredToHour,
-    filteredToOverHour }) => {
+    filteredToOverHour, filteredToFaves }) => {
 
     const [dropdown, setDropdown] = useState(false);
 
@@ -25,10 +25,12 @@ const NavBar = ({ goHome, searchChange, filteredToBreakFast, filteredToLunch, fi
 
     return (
         <div>
+
             <div className={`navBar ${darkMode ? "navbar-dark" : "navbar-light"}`}>
                 <h1 onClick={goHome}>Day Owls</h1>
                 <input className={`searchBar ${darkMode ? "searchBar-dark" : "searchBar-light"}`} type="search" placeholder="search..." onChange={searchChange} />
-                <button onClick={dropdownClick}>Menu</button>
+                <button onClick={dropdownClick}>Filter</button>
+                <button onClick={filteredToFaves}>Favourites</button>
                 <ThemeToggle />
             </div>
 
