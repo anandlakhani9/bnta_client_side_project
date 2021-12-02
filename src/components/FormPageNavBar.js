@@ -6,7 +6,7 @@ const FormPageNavBar = ({goHome}) => {
 
 
     return (
-            <div className="FormNavBar">
+            <div className="FormPageNavBar">
             <h1 onClick={goHome}>Day Owls</h1>
             <ThemeToggle />
             </div>
