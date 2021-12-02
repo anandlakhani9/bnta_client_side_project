@@ -11,6 +11,11 @@
     color: black;
 }
 
+.food-image{
+    height: 6em;
+    width:auto;
+}
+
 .card-dark:hover {
     /* box-shadow: 5px 10px 18px 5px rgba(2, 48, 252, 0.2); */
     box-shadow: 0px 10px 12px 0px white;
