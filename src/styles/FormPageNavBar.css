@@ -15,8 +15,16 @@
     background-color: #0D0D0D;
     padding-bottom: 20px;
     margin-bottom: 2em
-    
-    
+}
+
+.form-nav-dark{
+    background-color: #0D0D0D;
+    color: white;
+}
+
+.form-nav-light{
+    background-color: white;
+    color: black;
 }
     
 .FormPageNavBar h1 {

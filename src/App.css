@@ -48,10 +48,18 @@
   margin-right: 2em;
   margin-bottom: 2em;
   border-radius: 6px;
-  background-color: rgb(85, 85, 85);
+  /* background-color: rgb(85, 85, 85); */
   /* margin: 2em; */
   padding: 2em;
 }
+
+.rec-pg-light{
+  background-color: lightgrey;
+}
+.rec-pg-dark{
+  background-color:rgb(85, 85, 85);
+}
+
 .cooking-instructions{
   text-align: left;
   line-height: 1.5em
@@ -67,3 +75,20 @@
   margin-left:25%
 }
 
+
+
+.recipe-title-dark{
+  color: white;
+}
+
+.recipe-title-light{
+  color: black;
+}
+
+.ing-title-dark{
+  color: white;
+}
+
+.ing-title-light{
+  color: black;
+}
