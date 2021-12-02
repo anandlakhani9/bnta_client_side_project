@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToFaves, removeFromFaves, favourites}) => {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    const darkTheme = useContext(ThemeContext);
+    const darkMode = darkTheme.state.darkMode;
 
     const[theme, setTheme] = useState("");
   
@@ -33,19 +33,21 @@ const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToF
 
     
     return (
-    <Link to={{
-            pathname: `/recipe/${id}` }}>
         <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`}>
        
 
             {favourites == true ?
             (<button onClick={() => removeFromFaves(id)}><AiFillStar /></button>)
             :(<button onClick={() => addToFaves(id)}><AiOutlineStar /></button>)}
+            <Link to={{pathname: `/recipe/${id}` }}>
+            <div className="link-to-recipe">
             {/* <img src={props.image} alt={props.alt}/> */}
             <p>{name}</p>
             <p>Some description</p>
+            </div>
+            </Link>
         </div>
-        </Link>
+        
 
     )
 }
