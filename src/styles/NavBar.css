@@ -77,8 +77,8 @@ justify-content: space-around;
     border-radius: 32px;
     border: none;
     outline: none;
-    /* color: white; */
 }
+
 
 .searchBar-light{
     background: #D2CFCF;
@@ -106,7 +106,7 @@ justify-content: space-around;
     /* background-color: #0D0D0D; */
     /* color: white; */
     margin-top: 5%;
-    margin-left: 70%;
+    margin-left: 57%;
     margin-right: 20%;
     position: absolute;
     display: flex;

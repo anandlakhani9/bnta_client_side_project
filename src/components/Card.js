@@ -1,74 +1,53 @@
 import '../styles/Card.css'
 import React, { useState, useEffect, useContext } from "react";
+import { AiFillStar } from "react-icons/ai";
+import { AiOutlineStar } from "react-icons/ai";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
-
-const Card = (props) => {
-    const dark = useContext(ThemeContext);
-    const darkMode = dark.state.darkMode;
+const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToFaves, removeFromFaves, favourites}) => {
+    const darkTheme = useContext(ThemeContext);
+    const darkMode = darkTheme.state.darkMode;
 
     const[theme, setTheme] = useState("");
-
-
-    
-    
+  
     useEffect(() => {
-        if (props.isVegan) {
+        if(isVegan) {
             //console.log("vegan")
             setTheme("card-vegan")
         }
-        else if (props.isVegetarian){
+        else if (isVegetarian){
             setTheme("card-vegetarian")
         }
-        else if (props.isPescatarian){
+        else if (isPescatarian){
             setTheme("card-pesc")
         }
-        else if (props.isMeatOnly){
+        else if (isMeatOnly){
             setTheme("card-meat")
         }
-    }, [props.isVegan, props.isVegetarian, props.isMeatOnly, props.isPescatarian])
+        }, [isVegan, isVegetarian, isMeatOnly, isPescatarian]);
+  
+        let navigate = useNavigate();
+
+
     
-    
-    //console.log(theme)
-
-    // const addCardClass = () => {
-    //     console.log("running")
-    //     if (props.isVegan) {
-    //         console.log("vegan")
-    //         return "card-vegan"
-    //     }
-    //     else if (props.isVegetarian){
-    //         return "card-vegetarian"
-    //     }
-    //     else if (props.isMeatOnly){
-    //         return "card-meat"
-    //     }
-    //     else if (props.pescatarian){
-    //         return "card-pesc"
-    //     }
-    // }
-
-    let navigate = useNavigate();
-    // const goToRecipe = () => {
-    //     //navigate("/recipes/" + props.id)
-    //     //navigate("/recipes/:id")
-    // }
-
     return (
-        //<div className={`card ${darkMode ? "card-dark" : "card-light"}`}>
-        <Link to={{
-            pathname: `/recipe/${props.id}`,
-            state: {recipe: props.theRecipe}
-        }}>
         <div className={`card ${theme} ${darkMode ? "card-dark" : "card-light"}`}>
-        {/* onClick={goToRecipe}> */}
+       
+
+            {favourites == true ?
+            (<button onClick={() => removeFromFaves(id)}><AiFillStar /></button>)
+            :(<button onClick={() => addToFaves(id)}><AiOutlineStar /></button>)}
+            <Link to={{pathname: `/recipe/${id}` }}>
+            <div className="link-to-recipe">
             {/* <img src={props.image} alt={props.alt}/> */}
-            <p>{props.name}</p>
+            <p>{name}</p>
             <p>Some description</p>
+            </div>
+            </Link>
         </div>
-        </Link>
+        
 
     )
 }
