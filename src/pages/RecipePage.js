@@ -7,6 +7,8 @@ import FormPageNavBar from "../components/FormPageNavBar";
 import "../App.css"
 
 import UpdateRecipeForm from "../components/UpdateRecipeForm";
+import { useContext } from 'react';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 
 const RecipePage = (props) => {
@@ -14,6 +16,9 @@ const RecipePage = (props) => {
     const { id } = useParams();
     const [recipe, setRecipe] = useState(null)
     const [showUpdateForm, setShowUpdateForm] = useState(false)
+
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     useEffect(() => {
         getRecipeById(id).then(r => setRecipe(r))
@@ -37,7 +42,7 @@ const RecipePage = (props) => {
             <>
 
                 <FormPageNavBar goHome={goHome} />
-                <div className="recipe-page">
+                <div className={`recipe-page ${darkMode ? "rec-pg-dark" : "rec-pg-light"}`}>
 
                     <h1>{recipe.name}</h1>
                     <h3>{`Cuisine: ${recipe.cuisine}`}</h3>
