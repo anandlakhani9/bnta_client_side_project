@@ -40,6 +40,7 @@
   white-space: pre-line;
 }
 
+
 .recipe-page{
   text-align: center;
   margin-left: 2em;
@@ -53,3 +54,14 @@
   text-align: left;
   line-height: 1.5em
 }
+
+.ingredientPageTitle{
+  margin-top: 3em;
+  margin-left:25%
+}
+
+.recipePageTitle{
+  margin-top: 3em;
+  margin-left:25%
+}
+
