@@ -88,11 +88,9 @@ color:rgb(56, 56, 56);
   font-size: 26px;
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
-  margin-left: -3%;
-  margin-top: 5%;
+  margin-left: -1%;
+  margin-top: 1%;
 }
-
-
 
 .rec-pg-light{
   background-color: #8FD9D9;
@@ -106,7 +104,7 @@ color:rgb(56, 56, 56);
   line-height: 1.5em;
   font-size: 16px;
   font-family: 'Asap', sans-serif;
-  margin-left: 4%;
+  margin-left: 3%;
 }
 
 .ingredientPageTitle{

@@ -7,7 +7,7 @@
     display: inline-block;
     width: 60px;
     height: 34px;
-    margin-top: 50%;
+    margin-top: 45%;
     font-size: 12px;
     white-space: nowrap;
     border: none;
@@ -71,6 +71,36 @@
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .switch {
+      width: 37px;
+      height: 25px;
+      margin-top: 62%;
+      font-size: 10px;
+      white-space: nowrap;
+  
+      }
+  
+      .switch p {
+        display: none;
+      }
+  
+      .slider:before {
+  
+      height: 17px;
+      width: 17px;
+      margin-left: -6%;
+      margin-top: 25%;
+  
+      }
+  
+      input:checked + .slider:before {
+        -webkit-transform: translateX(14px);
+        -ms-transform: translateX(14px);
+        transform: translateX(14px);
+      }
   }
 
   @media only screen and (max-width: 600px) {

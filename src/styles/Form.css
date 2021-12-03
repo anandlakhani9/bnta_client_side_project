@@ -19,10 +19,6 @@
     transition: width 0.4s ease-in-out;
   }
 
-  .form{
-      
-  }
-
   input[type=text]:focus {
     width: 100%;
     border: 3px solid orangered;
@@ -138,8 +134,6 @@
     justify-content: center;
     align-items: center;
   }
-  
-
 
   @media only screen and (max-width: 600px) {
 
