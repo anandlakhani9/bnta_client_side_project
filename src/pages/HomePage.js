@@ -183,7 +183,7 @@ const HomePage = () => {
             filteredToFaves={filteredToFaves} />
             <h1 className={`homepage-title ${darkMode ? "homepage-title-dark" : "homepage-title-light"}`}>All Recipes</h1>
             <CardList recipes={recipesToShow} addToFaves={addToFaves} removeFromFaves={removeFromFaves}/>
-            <PopulateDBbutton/>
+            {/* <PopulateDBbutton/> */}
             <AddNewButton />
         </>
 
@@ -195,7 +195,7 @@ const HomePage = () => {
             filteredToMeatOnly={filteredToMeatOnly} filteredToPescatarian={filteredToPescatarian} filteredToHot={filteredToHot}
             filteredToMedium={filteredToMedium} filteredToMild={filteredToMild} filteredToSweet={filteredToSweet}
             filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}/>
-            <PopulateDBbutton/>
+            // <PopulateDBbutton/>
         <p>Loading...</p>
         </>
     )
