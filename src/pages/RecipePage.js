@@ -54,7 +54,7 @@ const RecipePage = (props) => {
                         <p><span className="recipe-instructions">{recipe.instructions}</span></p>
                     </div>
 
-                    <button onClick={updateForm}>Update Recipe</button>
+                    <button onClick={updateForm} id="recipeButton">Update Recipe</button>
                 </div>
 
 

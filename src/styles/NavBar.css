@@ -23,17 +23,26 @@ justify-content: space-around;
     background-color: white;
 }
 
+
 .navBar h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 48px;
+    font-size: 50px;
     position: relative; 
     margin: 1%;
+    margin-top: -3.3%;
+    margin-left: -18%;
+}
+
+
+
+.navbar-light h1 {
+    color: #4d4a4a;
 }
 
 .navBar h1:hover{
-    color: #a7cedd;
+    color: #5acfcf;
     transform: scale(1.1);
-    cursor: grab
+    cursor: grab;
 }
 
 .navBar button {
@@ -45,24 +54,37 @@ justify-content: space-around;
     border: none;
     outline: none;
     border-radius: 6px;
+    background-color: #0D0D0D;
     /* color: white; */
 }
 
 .navbar-dark button {
-    background: #222222;
+    background: ##0D0D0D;
     color: white; 
-    box-shadow: 0px 0px 1px 1px rgb(92, 92, 92);
+    /* box-shadow: 0px 0px 1px 1px rgb(92, 92, 92); */
 }
 .navbar-light button {
     background: white;
     color: black;
-    box-shadow: 0px 0px 1px 1px rgb(92, 92, 92); 
+    /* box-shadow: 0px 0px 1px 1px rgb(92, 92, 92);  */
     
 }
 
 .navBar button:hover {
-    background: #86a2ad;
+    background: #5acfcf;
     transition: 0.2s;
+}
+
+.navbar-light button:hover{
+    color: white;
+    transition: 0.2s;
+    background: #5acfcf;
+}
+
+.navbar-light h1:hover{
+    color: #5acfcf;
+    transform: scale(1.1);
+    cursor: grab
 }
 
 .searchBar {
@@ -77,11 +99,12 @@ justify-content: space-around;
     border-radius: 32px;
     border: none;
     outline: none;
+    padding-left: 1%;
 }
 
 
 .searchBar-light{
-    background: #D2CFCF;
+    background: #ecebeb;
     color: white;
 }
 
@@ -105,8 +128,8 @@ justify-content: space-around;
 .menuLinks {
     /* background-color: #0D0D0D; */
     /* color: white; */
-    margin-top: 5%;
-    margin-left: 57%;
+    margin-top: -4%;
+    margin-left: 59%;
     margin-right: 20%;
     position: absolute;
     display: flex;
@@ -145,7 +168,13 @@ justify-content: space-around;
 }
 
 .menuLinks html:hover {
-    background: #86a2ad;
+    background: #5acfcf;
+    
+}
+
+.menuLinks-light html:hover {
+    background: #5acfcf;
+    color: white;
     
 }
 
@@ -168,28 +197,78 @@ justify-content: space-around;
 
 @media only screen and (max-width: 600px) {
     .menuLinks {
-        margin-top: 6%;
-        margin-left: 65%;
+        margin-top: -5%;
+        margin-left: 53%;
     
-    }
+    } 
 
     .searchBar{
     width: 20%;
-    height: 5vw;
+    height: 3vw;
     margin-top: 4%;
     }
 
     .navBar h1 {
         font-size: 36px;
-        margin-top: 3%;
+        margin-top: -3%;
+        margin-left: -11%;
     }
 
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
     .menuLinks {
-        margin-top: 6%;
-        margin-left: 60%;
+        margin-top: -2%;
+        margin-left: 48%;
+        font-size: 12px;
+    
+    }
+
+    .searchBar{
+    width: 20%;
+    height: 3.5vw;
+    margin-top: 4%;
+    }
+
+    .navBar h1 {
+        font-size: 18px;
+        margin-top: -2%;
+        margin-left: -5%;
+    }
+
+    .navBar button {
+        font-size: 8px;
+        margin-top: 3%;
+        margin-bottom: 4%;
+    }
+
+}
+
+/* @media only screen and (min-width: 1000px) {
+    .menuLinks {
+        margin-top: -3%;
+        margin-left: 57%;
+    
+    } 
+
+    .searchBar{
+    width: 20%;
+    height: 2vw;
+    margin-top: 4%;
+    }
+
+    
+
+} */
+
+
+
+
+/* @media only screen and (max-height: 812px) {
+
+    .menuLinks {
+        margin-top: 4%;
+        margin-left: 45%;
         font-size: 12px;
     
     }
@@ -202,13 +281,107 @@ justify-content: space-around;
 
     .navBar h1 {
         font-size: 22px;
-        margin-top: 4%;
+        margin-top: 0;
     }
 
     .navBar button {
         font-size: 12px;
         margin-top: 5%;
+        margin-bottom: 4%;
     }
 
 }
 
+@media only screen and (max-height: 800px) and (max-width: 1280px) {
+
+    .menuLinks {
+        margin-top: -5%;
+        margin-left: 56%;
+        font-size: 12px;
+    
+    }
+
+    .searchBar{
+    width: 20%;
+    height: 2.5vw;
+    margin-top: 3%;
+    }
+
+    .navBar h1 {
+        font-size: 50px;
+        margin-top: -3%;
+    }
+
+    .navBar button {
+        font-size: 22px;
+        margin-top: 3%;
+    }
+
+}
+
+@media only screen and (max-height: 600px) and (max-width: 1024px) {
+    .menuLinks {
+        margin-top: -5%;
+        margin-left: 56%;
+        font-size: 12px;
+    }
+
+    .searchBar{
+    width: 20%;
+    height: 2.5vw;
+    margin-top: 3%;
+    }
+
+    .navBar h1 {
+        font-size: 44px;
+        margin-top: -3%;
+    }
+
+    .navBar button {
+        font-size: 18px;
+        margin-top: 3.1%;
+    }
+}
+
+
+@media only screen and (max-height: 720px) and (max-width: 540px) {
+
+    .menuLinks {
+        margin-top: -4%;
+        margin-left: 56%;
+        font-size: 12px;
+    }
+
+    .searchBar{
+    width: 20%;
+    height: 4vw;
+    margin-top: 3.5%;
+    }
+
+    .navBar h1 {
+        font-size: 36px;
+        margin-top: 2%;
+    }
+
+    .navBar button {
+        font-size: 12px;
+        margin-top: 3%;
+    }
+
+}
+
+@media only screen and (max-height: 812px) and (max-width: 375px) {
+    .menuLinks {
+        margin-top: -10%;
+        margin-left: 41%;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-height: 1024px) and (max-width: 768px) {
+    .menuLinks {
+        margin-top: 0%;
+        margin-left: 54%;
+        font-size: 12px;
+    }
+}  */

@@ -2,6 +2,8 @@ import '../styles/NavBar.css'
 import ThemeToggle from './ThemeToggle';
 import { useState, useContext } from "react"
 import { ThemeContext } from "../contexts/ThemeContext";
+import { GiOwl } from "react-icons/gi";
+
 
 
 const NavBar = ({ goHome, searchChange, filteredToBreakFast, filteredToLunch, filteredToDinner, filteredToSnack,
@@ -27,7 +29,7 @@ const NavBar = ({ goHome, searchChange, filteredToBreakFast, filteredToLunch, fi
         <div>
 
             <div className={`navBar ${darkMode ? "navbar-dark" : "navbar-light"}`}>
-                <h1 onClick={goHome}>Day Owls</h1>
+                <h1 onClick={goHome}>Day Owls <GiOwl /></h1>
                 <input className={`searchBar ${darkMode ? "searchBar-dark" : "searchBar-light"}`} type="search" placeholder="search..." onChange={searchChange} />
                 <button onClick={dropdownClick}>Filter</button>
                 <button onClick={filteredToFaves}>Favourites</button>

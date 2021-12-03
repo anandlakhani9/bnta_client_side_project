@@ -2,6 +2,7 @@ import '../styles/FormPageNavBar.css'
 import ThemeToggle from './ThemeToggle';
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import { GiOwl } from "react-icons/gi";
 
 
 const FormPageNavBar = ({goHome}) => {
@@ -12,7 +13,7 @@ const FormPageNavBar = ({goHome}) => {
 
     return (
             <div className={`FormPageNavBar ${darkMode ? "form-nav-dark" : "form-nav-light"}`}>
-            <h1 onClick={goHome}>Day Owls</h1>
+            <h1 onClick={goHome}>Day Owls <GiOwl /></h1>
             <ThemeToggle />
             </div>
     )

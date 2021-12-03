@@ -5,6 +5,7 @@ import { AiOutlineStar } from "react-icons/ai";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import food_placeholder from "../images/food_placeholder.png"
 
 const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToFaves, removeFromFaves, favourites}) => {
     const darkTheme = useContext(ThemeContext);
@@ -37,11 +38,11 @@ const Card = ({name,key,id,isVegan,isVegetarian,isMeatOnly,isPescatarian, addToF
        
 
             {favourites == true ?
-            (<button onClick={() => removeFromFaves(id)}><AiFillStar /></button>)
-            :(<button onClick={() => addToFaves(id)}><AiOutlineStar /></button>)}
+            (<button onClick={() => removeFromFaves(id)}><AiFillStar alt="favourite button"/></button>)
+            :(<button onClick={() => addToFaves(id)}><AiOutlineStar alt="unfavourite button"/></button>)}
             <Link to={{pathname: `/recipe/${id}` }}>
             <div className="link-to-recipe">
-            {/* <img src={props.image} alt={props.alt}/> */}
+            <img className ="food-image" src={food_placeholder} alt="placeholder"/>
             <p>{name}</p>
             <p>Some description</p>
             </div>
