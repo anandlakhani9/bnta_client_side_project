@@ -16,8 +16,8 @@
   /* Hide default HTML checkbox */
 
   .switch p {
-    margin-top: 40%;
-    margin-left: -10%;
+    margin-top: 5%;
+    margin-left: -7%;
   }
   .switch .dark-mode-check {
     opacity: 0;
@@ -51,11 +51,11 @@
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #5acfcf;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #5acfcf;
   }
   
   input:checked + .slider:before {
@@ -77,10 +77,14 @@
     .switch {
     width: 37px;
     height: 25px;
-    margin-top: 50%;
+    margin-top: 57%;
     font-size: 10px;
     white-space: nowrap;
 
+    }
+
+    .switch p {
+      display: none;
     }
 
     .slider:before {
@@ -100,11 +104,11 @@
 
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
   .switch {
   width: 27px;
   height: 15px;
-  margin-top: 60%;
+  margin-top: 50%;
   font-size: 8px;
   white-space: nowrap;
 
@@ -131,3 +135,79 @@
   }
 
 }
+
+/* @media only screen and (max-height: 800px) and (max-width: 1280px) {
+  .switch {
+    margin-top: 60%;
+  }
+ */
+
+/* } */
+
+/* @media only screen and (max-height: 600px) and (max-width: 1024px) {
+  .switch {
+    width: 37px;
+    height: 25px;
+    margin-top: 80%;
+    font-size: 10px;
+    white-space: nowrap;
+
+    }
+
+    .switch p {
+      display: none;
+    }
+
+    .slider:before {
+
+    height: 17px;
+    width: 17px;
+    margin-left: -6%;
+    margin-top: 25%;
+
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+    }
+}
+
+@media only screen and (max-height: 720px) and (max-width: 540px) {
+
+  .switch {
+    width: 30px;
+    height: 20px;
+    margin-top: 60%;
+    font-size: 10px;
+    white-space: nowrap;
+
+    }
+
+    .switch p {
+      display: none;
+    }
+
+    .slider:before {
+
+    height: 13px;
+    width: 13px;
+    margin-left: -6%;
+    margin-top: 25%;
+
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+    }
+
+}
+
+@media only screen and (max-height: 812px) {
+  .switch{
+    margin-bottom: 10%;
+  }
+} */

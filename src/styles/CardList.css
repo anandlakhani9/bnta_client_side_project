@@ -12,3 +12,18 @@
     z-index: 0;
         
   }
+  
+
+  @media only screen and (max-width: 375px) {
+    .cardList {
+      margin-top: 20%;
+      
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cardList {
+      margin-top: 15%;
+      grid-template-columns: repeat(auto-fit, 200px);
+    }
+  }
