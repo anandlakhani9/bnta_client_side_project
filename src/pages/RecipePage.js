@@ -9,6 +9,10 @@ import "../App.css"
 import UpdateRecipeForm from "../components/UpdateRecipeForm";
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
+import vegetarianIcon from "../images/vegetarianIcon.png"
+import veganIcon from "../images/veganIcon.png"
+import pescatarianIcon from "../images/pescatarianIcon.png"
+import meatOnlyIcon from "../images/meatOnlyIcon.png"
 
 
 const RecipePage = (props) => {
@@ -49,6 +53,32 @@ const RecipePage = (props) => {
                     <h3>{`Spice Level: ${recipe.spiceRating}`}</h3>
                     <h3>{`Cooking Time: ${recipe.cookingTime} minutes`}</h3>
                     <h3>{`Meal Type: ${recipe.mealType}`}</h3>
+                    <div className="recipe-icon-block">
+          {recipe.vegetarian ? 
+          <img src={vegetarianIcon} alt="vegetarian" className="icon"/>
+          :
+          <>
+          </>
+        }
+          {recipe.vegan ? 
+          <img src={veganIcon} alt="Vegan Icon" className="icon"/>
+           :
+           <>
+           </>
+          }
+          {recipe.pescatarian ? 
+          <img src={pescatarianIcon} alt="Pescatarian Icon" className="icon"/>
+          :
+          <>
+          </>
+         }
+          {recipe.meatOnly ?
+          <img src={meatOnlyIcon} alt="Meat Icon" className="icon"/>
+          :
+          
+          <></>}
+        
+      </div>
                     <div className="cooking-instructions">
                         <h2>Instructions</h2>
                         <p><span className="recipe-instructions">{recipe.instructions}</span></p>
