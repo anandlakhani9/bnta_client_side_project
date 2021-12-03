@@ -6,6 +6,10 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import food_placeholder from "../images/food_placeholder.png"
+import vegetarianIcon from "../images/vegetarianIcon.png"
+import veganIcon from "../images/veganIcon.png"
+import pescatarianIcon from "../images/pescatarianIcon.png"
+import meatOnlyIcon from "../images/meatOnlyIcon.png"
 
 const Card = ({
   name,
@@ -54,9 +58,38 @@ const Card = ({
           {/* <img src={props.image} alt={props.alt}/> */}
           <img className ="food-image" src={food_placeholder} alt="placeholder"/>
           <p>{name}</p>
-          <p>Some description</p>
+          {/* <p>Some description</p> */}
+
+          <div className="recipe-icon-block">
+          {isVegetarian ? 
+          <img src={vegetarianIcon} alt="vegetarian" className="icon"/>
+          :
+          <>
+          </>
+        }
+          {isVegan ? 
+          <img src={veganIcon} alt="Vegan Icon" className="icon"/>
+           :
+           <>
+           </>
+          }
+          {isPescatarian ? 
+          <img src={pescatarianIcon} alt="Pescatarian Icon" className="icon"/>
+          :
+          <>
+          </>
+         }
+          {isMeatOnly ?
+          <img src={meatOnlyIcon} alt="Meat Icon" className="icon"/>
+          :
+          
+          <></>}
+        
+      </div>
         </div>
+        
       </Link>
+      
     </div>
   );
 };
