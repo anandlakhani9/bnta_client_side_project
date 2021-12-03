@@ -1,11 +1,12 @@
 import "../adapters/recipeAdapter"
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext} from "react"
 import {getAllRecipes} from "../adapters/recipeAdapter"
 import CardList from "../components/CardList"
 import NavBar from "../components/NavBar"
 import {useNavigate} from "react-router-dom";
 import AddNewButton from "../components/AddNewButton"
 import PopulateDBbutton from "../components/PopulateDBbutton"
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const HomePage = () => {
     const [recipes, setRecipes] = useState(null);
@@ -167,6 +168,8 @@ const HomePage = () => {
         setRecipesFiltered(newRecipes);
     }
 
+    const darkTheme = useContext(ThemeContext);
+    const darkMode = darkTheme.state.darkMode;
 
     return (
         recipes ?
@@ -178,6 +181,7 @@ const HomePage = () => {
             filteredToMedium={filteredToMedium} filteredToMild={filteredToMild} filteredToSweet={filteredToSweet}
             filteredTo30mins={filteredTo30mins} filteredToHour={filteredToHour} filteredToOverHour={filteredToOverHour}
             filteredToFaves={filteredToFaves} />
+            <h1 className={`homepage-title ${darkMode ? "homepage-title-dark" : "homepage-title-light"}`}>All Recipes</h1>
             <CardList recipes={recipesToShow} addToFaves={addToFaves} removeFromFaves={removeFromFaves}/>
             <PopulateDBbutton/>
             <AddNewButton />

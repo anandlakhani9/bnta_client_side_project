@@ -6,18 +6,18 @@ const ThemeToggle = () => {
 
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
-    const [toggled, setToggled] = useState(true)
+    //const [toggled, setToggled] = useState(true)
 
     const swapMode = (e) => {
         let isChecked = e.target.checked;
         if (isChecked){
             theme.dispatch({type: "DARKMODE"})
-            setToggled(true)
+            //setToggled(true)
             
         }
         else{
             theme.dispatch({type: "LIGHTMODE"})
-            setToggled(false)
+            //setToggled(false)
             
         }
     }
@@ -25,7 +25,7 @@ const ThemeToggle = () => {
     return (
         <div>
             <label className="switch">
-                <input className="dark-mode-check"type="checkbox" onChange={swapMode} checked={toggled}/>
+                <input className="dark-mode-check"type="checkbox" onChange={swapMode} checked={darkMode}/>
                 <span className="slider round"></span>
                 <p>Dark mode</p>
             </label>

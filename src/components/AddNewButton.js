@@ -30,11 +30,11 @@ const AddNewButton = (props) => {
             </div>
         :
         <div className="addButtonDiv">
-            
             <button onClick = {goNewRecipePage} className="addRecipe">Add New Recipe</button>
             <button onClick = {goNewIngredientPage} className="addIngredient">Add New Ingredient</button>
-        
             <button onClick={handleClick} className="plusButton">-</button>
+
+            
 
             </div>
 

@@ -37,7 +37,21 @@
   }
 } */
 
+
 @import url('https://fonts.googleapis.com/css2?family=Asap&family=Roboto:wght@700&display=swap');
+
+.homepage-title{
+  margin-top:5em;
+  text-align:center;
+}
+
+.homepage-title-dark{
+color: white;
+}
+
+.homepage-title-light{
+color:rgb(56, 56, 56);
+}
 
 .recipe-instructions{
   white-space: pre-line;
